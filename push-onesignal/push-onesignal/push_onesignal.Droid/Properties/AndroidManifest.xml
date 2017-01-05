@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android" 
+  android:installLocation="auto" 
+  package="xam.samples.push_onesignal">
+  
+	<uses-sdk android:minSdkVersion="14" />
+	
+  <application android:label="Push with OneSignal">
+  
+    <receiver android:name="com.onesignal.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+      
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+        <category android:name="xam.samples.push_onesignal" />
+      </intent-filter>
+    
+    </receiver>
+  
+  </application>
+	
+  <permission android:name="xam.samples.push_onesignal.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+	<uses-permission android:name="xam.samples.push_onesignal.permission.C2D_MESSAGE" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.WAKE_LOCK" />
+  <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+  
+</manifest>
